@@ -1,66 +1,35 @@
-# Arithmetic Operations Using Multiple Inheritance in Python
-
-This Python program demonstrates **multiple inheritance** by performing basic arithmetic operations — Addition, Subtraction, and Division — using three classes.
+# Pandas Program: Create and Display a DataFrame with Custom Index Labels
 
 ## 🎯 Aim
 
-To write a Python program to calculate **Add, Sub & Division** using **Multiple Inheritance**.
+To create and display a **DataFrame** using the **Pandas** library in Python from a given dictionary, and apply specific index labels to the rows.
+
+---
 
 ## 🧠 Algorithm
 
-1. **Define `Calculation1` class**
-   - Contains `Summation(a, b)` method to return the sum of two numbers.
-2. **Define `Calculation2` class**
-   - Contains `Subtraction(a, b)` method to return the difference of two numbers.
-3. **Define `Derived` class**
-   - Inherits from both `Calculation1` and `Calculation2`.
-   - Contains `Division(a, b)` method to return the division result.
-4. **Input**
-   - Prompt the user to enter two numbers.
-5. **Process**
-   - Create an object of the `Derived` class.
-   - Call `Summation`, `Subtraction`, and `Division` methods.
-6. **Output**
-   - Display the results of the three operations.
+1. **Import Libraries**: Import the required libraries – `pandas` and `numpy`.
+2. **Create Dictionary**: Define a dictionary `exam_data` with keys: `'name'`, `'score'`, `'attempts'`, and `'qualify'`.
+3. **Index Labels**: Create a list of custom index labels called `labels`.
+4. **Create DataFrame**: Use `pd.DataFrame()` to create the DataFrame by passing the dictionary and index labels.
+5. **Display Output**: Display the DataFrame using `print()` or by simply calling the DataFrame variable.
 
-## 💻 Program 
+---
+
+## 💻 Program
 ```
-# Class 1
-class Calculation1:
-    def Summation(self, a, b):
-        return a + b
-
-
-# Class 2
-class Calculation2:
-    def Subtraction(self, a, b):
-        return a - b
-
-
-# Derived class (Multiple Inheritance)
-class Derived(Calculation1, Calculation2):
-    def Division(self, a, b):
-        if b != 0:
-            return a / b
-        else:
-            return "Division by zero not allowed"
-
-
-# Input
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-
-# Object creation
-obj = Derived()
-
-# Output
-print("\n--- Results ---")
-print("Addition:", obj.Summation(a, b))
-print("Subtraction:", obj.Subtraction(a, b))
-print("Division:", obj.Division(a, b))
+import pandas as pd
+import numpy as np
+data={
+    'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],  'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes']
+}
+labels=['a','b','c','d','e','f','g','h','i','j']
+df1=pd.DataFrame(data,index=labels)
+print(df1)
 ```
 
-## Output Example
+## Output
+<img width="844" height="295" alt="image" src="https://github.com/user-attachments/assets/b3f0ab92-29ca-46cd-913c-f1879460e929" />
 
-<img width="606" height="438" alt="image" src="https://github.com/user-attachments/assets/d94fe32e-1057-40fc-96f1-a716c7707fcb" />
-
+## Result
+Thus the program was successfully executed.
